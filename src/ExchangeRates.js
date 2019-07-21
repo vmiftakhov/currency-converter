@@ -41,7 +41,7 @@ export default class ExchangeRates extends Component {
             <div>
                 <table>
                     <thead>
-                        <tr><th>Букв.код</th><th>Валюта</th><th>Цифр. код</th><th>Курс</th></tr>
+                        <tr><th>Букв.код</th><th>Валюта</th><th>Цифр. код</th><th>Курс Валют</th></tr>
                     </thead>
                     <tbody>
                         {tableRates}
