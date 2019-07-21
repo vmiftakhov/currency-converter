@@ -1,0 +1,27 @@
+.wrapper {
+  margin: 0 auto 0 auto;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+}
+
+a { 
+  padding: 10px;
+  display: inline-block;
+}
+
+input {
+  margin: 2rem;
+}
+
+.totalSum {
+  text-align: right;
+}
+
+.form-wrapper {
+  margin-top: 300px;
+}
+
+.valueExchangeRates {
+  width: 10rem;
+}
