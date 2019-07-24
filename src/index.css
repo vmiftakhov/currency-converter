@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+div.form-wrapper {
+  margin-top: 200px;
+  padding: 2rem;
+  border: 1px solid green;
+  border-radius: 1rem;
+}

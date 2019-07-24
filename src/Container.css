@@ -11,11 +11,12 @@ a {
 }
 
 input {
-  margin: 2rem;
+  margin: 1rem 0 2rem 0;
 }
 
 .totalSum {
   text-align: right;
+  font-weight: bold;
 }
 
 .form-wrapper {
@@ -24,4 +25,27 @@ input {
 
 .valueExchangeRates {
   width: 10rem;
+}
+
+select {
+  width: auto; 
+  padding: .5rem;
+  margin: 1rem; 
+  background-color: #fff;
+}
+
+input { 
+  padding: .5rem;
+}
+
+.diff-positive, 
+.diff-negative {
+  padding-left: 1rem;
+}
+
+.diff-positive {
+  color: green;
+}
+.diff-negative {
+  color: red;
 }

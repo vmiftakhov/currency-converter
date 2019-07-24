@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
-import ItemListRates from './ItemListRates'
+import ItemListRates from './ItemListRates';
+import uuid from 'uuid';
 
 
 
 export default class ExchangeRates extends Component {
-    constructor() {
-        super();
-        this.state = {
-            data: null,
+    constructor(props) {
+        super(props);
+        this.state = {  
         };
     }
-    componentDidMount() {
-        fetch('https://www.cbr-xml-daily.ru/daily_json.js')
-            .then(response => response.json())
-            .then(data => this.setState({ data }));
-    }
+    
     render() {
         let tableRates;
-        if (this.state.data) {
-            console.log(this.state.data.Valute);
-            let valute = this.state.data.Valute;
+        if (this.props.data) {
+            // console.log(this.props.data.Valute);
+            let valute = this.props.data.Valute;
             tableRates = Object.keys(valute).map((key) => {
                 return (
                     <ItemListRates
+                        key={uuid.v4()}
                         CharCode={valute[key].CharCode}
                         Nominal={valute[key].Nominal}
                         // ID={valute[key].ID}
@@ -33,7 +30,7 @@ export default class ExchangeRates extends Component {
                     />
                 );
             });
-            console.log(tableRates)
+            // console.log(tableRates)
         }
 
         // let tableRates = this.state.data.Valute.map([...props]) => {console.log(props)});
@@ -41,7 +38,7 @@ export default class ExchangeRates extends Component {
             <div>
                 <table>
                     <thead>
-                        <tr><th>Букв.код</th><th>Валюта</th><th>Цифр. код</th><th>Курс Валют</th></tr>
+                        <tr><th>Букв.код</th><th>Валюта</th><th>Цифр. код</th><th>Курс</th></tr>
                     </thead>
                     <tbody>
                         {tableRates}

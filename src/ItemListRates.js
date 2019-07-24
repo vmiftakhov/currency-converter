@@ -11,8 +11,8 @@ export default class ItemListRates extends Component {
 
 
     render() {
-        
-        console.log(this.props.Previous);
+
+        // console.log(this.props.Previous);
         // if (this.props.Value > this.props.Previous) {
         //     ("+ " + Math.abs(difference));
         // } else {
@@ -21,8 +21,15 @@ export default class ItemListRates extends Component {
         let difference = Math.abs(this.props.Value - this.props.Previous).toFixed(2);
         let valueExchangeRates = (this.props.Value / this.props.Nominal).toFixed(2);
         let differenceExchangeRates = (this.props.Value > this.props.Previous) ?
-            ( " (+" + difference + ") ▲" ) :
-            ( " (-" + difference + ") ▼" );
+            (" (+" + difference + ") ▲") :
+            (" (-" + difference + ") ▼");
+        let differenceSpan;
+
+
+
+        (this.props.Value - this.props.Previous) > 0 ?
+            differenceSpan = <span className="diff-positive">{differenceExchangeRates}</span> :
+            differenceSpan = <span className="diff-negative">{differenceExchangeRates}</span>;
 
         // console.log(this.props);
         // let tableRates = this.state.data.Valute.map([...props]) => {console.log(props)});
@@ -33,7 +40,7 @@ export default class ItemListRates extends Component {
                 <td>{this.props.Name}</td>
                 <td>{this.props.NumCode}</td>
                 {/* <td>{this.props.Previous}</td> */}
-                <td class="valueExchangeRates">{valueExchangeRates} <span>{differenceExchangeRates}</span></td>
+                <td className="valueExchangeRates">{valueExchangeRates} <span>{differenceSpan}</span></td>
             </tr>
         );
     }
